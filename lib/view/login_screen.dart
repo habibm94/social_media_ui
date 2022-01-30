@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_ui/widgets/curvedClipper.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -15,11 +16,14 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image(
-                image: AssetImage('assets/images/login_background.jpg'),
-                fit: BoxFit.cover,
-                height: MediaQuery.of(context).size.height * 0.35,
-                width: double.infinity,
+              ClipPath(
+                clipper: CurvedClipper(),
+                child: Image(
+                  image: AssetImage('assets/images/login_background.jpg'),
+                  fit: BoxFit.cover,
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  width: double.infinity,
+                ),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
@@ -29,7 +33,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w500,
-                    color: Theme.of(context).primaryColor),
+                    color: Theme.of(context).primaryColor,
+                    letterSpacing: 10.0),
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.03,
@@ -41,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     prefixIcon: Icon(
                       Icons.account_box,
-                      size: 40.0,
+                      size: 30.0,
                       color: Theme.of(context).primaryColor,
                     ),
                     fillColor: Colors.white,
@@ -61,7 +66,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   maxLines: 2,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock),
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      size: 30.0,
+                      color: Theme.of(context).primaryColor,
+                    ),
                     fillColor: Colors.white,
                     filled: true,
                     contentPadding:
