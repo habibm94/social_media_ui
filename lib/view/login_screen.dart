@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_ui/view/homeScreen.dart';
 import 'package:social_media_ui/widgets/curvedClipper.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -87,12 +88,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: MediaQuery.of(context).size.height * 0.02,
               ),
               Container(
-                child: Text(
-                  'Log In',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+                child: TextButton(
+                  onPressed: () => Navigator.pushReplacement(
+                      context, MaterialPageRoute(builder: (_) => HomeScreen())),
+                  child: Text(
+                    'Log In',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 margin: EdgeInsets.symmetric(horizontal: 60.0),
