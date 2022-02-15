@@ -18,7 +18,7 @@ class PostCarousel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           child: Text(
             'Posts',
@@ -76,7 +76,7 @@ class PostCarousel extends StatelessWidget {
                   // ),
                   Positioned(
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(15.0),
                             bottomRight: Radius.circular(15.0),
@@ -84,7 +84,7 @@ class PostCarousel extends StatelessWidget {
                           color: Colors.white54),
                       height: 100.0,
                       child: Padding(
-                        padding: EdgeInsets.all(10.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Column(
                           children: [
                             Text(
