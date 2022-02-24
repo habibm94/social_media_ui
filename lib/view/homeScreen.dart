@@ -5,6 +5,8 @@ import 'package:social_media_ui/data/data.dart';
 import 'package:social_media_ui/widgets/follwingUser_listview.dart';
 import 'package:social_media_ui/widgets/postCarousel.dart';
 
+import '../widgets/custom_drawer.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -49,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
             labelColor: Theme.of(context).primaryColor,
             indicatorWeight: 3.0,
             unselectedLabelStyle: TextStyle(fontSize: 18.0),
-            tabs: [
+            tabs: const [
               Tab(
                 text: 'Trending',
               ),
@@ -62,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen>
             physics: BouncingScrollPhysics(),
             shrinkWrap: true,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
                 child: Text(
                   'Friends',
@@ -80,6 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
           )
         ],
       ),
+      drawer: CustomDrawer(),
     );
   }
 }
