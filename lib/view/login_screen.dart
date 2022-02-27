@@ -12,7 +12,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -20,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ClipPath(
                 clipper: CurvedClipper(),
                 child: Image(
-                  image: AssetImage('assets/images/login_background.jpg'),
+                  image: const AssetImage('assets/images/login_background.jpg'),
                   fit: BoxFit.cover,
                   height: MediaQuery.of(context).size.height * 0.35,
                   width: double.infinity,
@@ -41,7 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: MediaQuery.of(context).size.height * 0.03,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
                 child: TextField(
                   maxLines: 2,
                   decoration: InputDecoration(
@@ -63,7 +64,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
                 child: TextField(
                   maxLines: 2,
                   decoration: InputDecoration(
@@ -74,8 +76,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     fillColor: Colors.white,
                     filled: true,
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 2.0, horizontal: 5.0),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 2.0, horizontal: 5.0),
                     hintText: 'Your Password',
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10.0),
@@ -91,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextButton(
                   onPressed: () => Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (_) => HomeScreen())),
-                  child: Text(
+                  child: const Text(
                     'Log In',
                     style: TextStyle(
                       fontSize: 20.0,
@@ -100,7 +102,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                margin: EdgeInsets.symmetric(horizontal: 60.0),
+                margin: const EdgeInsets.symmetric(horizontal: 60.0),
                 decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(10.0)),
@@ -111,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Align(
                   alignment: FractionalOffset.bottomCenter,
                   child: Container(
-                    child: Text(
+                    child: const Text(
                       'Don\'t have account? Sign Up',
                       style: TextStyle(
                         fontSize: 20.0,

@@ -17,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen>
     with SingleTickerProviderStateMixin {
   TabController? _homescreenTabController;
-  late PageController _pageController;
+  PageController? _pageController;
   @override
   void initState() {
     // TODO: implement initState
@@ -47,10 +47,11 @@ class _HomeScreenState extends State<HomeScreen>
         children: [
           TabBar(
             controller: _homescreenTabController,
-            labelStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            labelStyle:
+                const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             labelColor: Theme.of(context).primaryColor,
             indicatorWeight: 3.0,
-            unselectedLabelStyle: TextStyle(fontSize: 18.0),
+            unselectedLabelStyle: const TextStyle(fontSize: 18.0),
             tabs: const [
               Tab(
                 text: 'Trending',
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen>
           )
         ],
       ),
-      drawer: CustomDrawer(),
+      drawer: const CustomDrawer(),
     );
   }
 }

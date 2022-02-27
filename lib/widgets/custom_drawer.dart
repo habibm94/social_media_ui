@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:social_media_ui/data/data.dart';
+import 'package:social_media_ui/view/profile_screen.dart';
 
 import '../view/homeScreen.dart';
 
@@ -16,7 +17,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
   Widget build(BuildContext context) {
     return Drawer(
       elevation: 5,
-      child: Container(
+      child: SizedBox(
         height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
@@ -49,12 +50,12 @@ class _CustomDrawerState extends State<CustomDrawer> {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(
                         currentUser.name!,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: CupertinoColors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 30,
@@ -74,32 +75,34 @@ class _CustomDrawerState extends State<CustomDrawer> {
                 'Home',
                 HomeScreen()),
             DrawerItems(
-                Icon(
+                const Icon(
                   Icons.dashboard,
                 ),
                 'Chat',
-                HomeScreen()),
+                const HomeScreen()),
             DrawerItems(
-                Icon(
+                const Icon(
                   Icons.dashboard,
                 ),
                 'Profile',
-                HomeScreen()),
+                ProfileScreen(
+                  user: currentUser,
+                )),
             DrawerItems(
-                Icon(
+                const Icon(
                   Icons.dashboard,
                 ),
                 'Settings',
-                HomeScreen()),
+                const HomeScreen()),
             Expanded(
                 child: Align(
               alignment: FractionalOffset.bottomCenter,
               child: DrawerItems(
-                  Icon(
+                  const Icon(
                     Icons.dashboard,
                   ),
                   'LogOut',
-                  HomeScreen()),
+                  const HomeScreen()),
             ))
           ],
         ),
@@ -120,33 +123,9 @@ class DrawerItems extends StatelessWidget {
         leading: icon,
         title: Text(
           text,
-          style: TextStyle(fontSize: 18),
+          style: const TextStyle(fontSize: 18),
         ),
         onTap: () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (_) => screen)));
-  }
-}
-
-class DrawerBuilder extends StatelessWidget {
-  Icon drawerIcon;
-  String name;
-  Function onTap;
-  DrawerBuilder(
-      {Key? key,
-      required this.onTap,
-      required this.drawerIcon,
-      required this.name})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(
-        name,
-        style: const TextStyle(fontSize: 20.0),
-      ),
-      leading: drawerIcon,
-      onTap: onTap(),
-    );
   }
 }

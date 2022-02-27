@@ -5,9 +5,9 @@ import 'package:social_media_ui/data/data.dart';
 import '../models/post_model.dart';
 
 class PostCarousel extends StatelessWidget {
-  PageController? pageController;
-  String carouseltitle;
-  List<Post> posts;
+  final PageController? pageController;
+  final String carouseltitle;
+  final List<Post> posts;
 
   PostCarousel(
       {required this.pageController,
@@ -19,11 +19,11 @@ class PostCarousel extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           child: Text(
-            'Posts',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
+            carouseltitle!,
+            style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
         ),
         Container(
@@ -90,17 +90,17 @@ class PostCarousel extends StatelessWidget {
                             children: [
                               Text(
                                 post.title!,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 17, fontWeight: FontWeight.bold),
                               ),
                               Text(
                                 post.location!,
-                                style: TextStyle(
+                                style: const TextStyle(
                                   fontSize: 15,
                                 ),
                               ),
                               Padding(
-                                padding: EdgeInsets.only(right: 50.0),
+                                padding: const EdgeInsets.only(right: 50.0),
                                 child: Row(
                                   children: [
                                     Row(
