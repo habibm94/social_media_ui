@@ -22,7 +22,7 @@ class PostCarousel extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           child: Text(
-            carouseltitle!,
+            carouseltitle,
             style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 16.0),
           ),
         ),
